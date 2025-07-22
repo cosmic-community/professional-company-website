@@ -1,6 +1,4 @@
 ---
-// src/components/Header.astro
----
 
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <nav class="container-max section-padding py-4">
@@ -12,15 +10,27 @@
         <span class="text-xl font-semibold text-gray-900">Company</span>
       </div>
       
-      <div class="hidden md:flex items-center space-x-8">
+      <!-- Desktop Navigation - Show on large screens only -->
+      <div class="hidden lg:flex items-center space-x-8">
         <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors">Home</a>
         <a href="#services" class="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
         <a href="#team" class="text-gray-600 hover:text-blue-600 transition-colors">Team</a>
-        <a href="#case-studies" class="text-gray-600 hover:text-blue-600 transition-colors">Case Studies</a>
+        <a href="#case-studies" class="text-gray-600 hover:text-blue-600 transition-colors whitespace-nowrap">Case Studies</a>
         <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition-colors">Testimonials</a>
-        <a href="#contact" class="btn-primary">Get Started</a>
+        <a href="#contact" class="btn-primary whitespace-nowrap">Get Started</a>
       </div>
       
+      <!-- Tablet Navigation - Show on medium screens -->
+      <div class="hidden md:flex lg:hidden items-center space-x-6">
+        <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors text-sm">Home</a>
+        <a href="#services" class="text-gray-600 hover:text-blue-600 transition-colors text-sm">Services</a>
+        <a href="#team" class="text-gray-600 hover:text-blue-600 transition-colors text-sm">Team</a>
+        <a href="#case-studies" class="text-gray-600 hover:text-blue-600 transition-colors text-sm whitespace-nowrap">Cases</a>
+        <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition-colors text-sm">Reviews</a>
+        <a href="#contact" class="btn-primary text-sm px-4 py-2 whitespace-nowrap">Get Started</a>
+      </div>
+      
+      <!-- Mobile Menu Button - Show on small screens -->
       <button class="md:hidden" id="mobile-menu-button">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -28,6 +38,7 @@
       </button>
     </div>
     
+    <!-- Mobile Menu -->
     <div class="md:hidden hidden" id="mobile-menu">
       <div class="pt-4 pb-2 space-y-2">
         <a href="/" class="block text-gray-600 hover:text-blue-600 py-2">Home</a>
