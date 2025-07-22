@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-shadow duration-200 hover:shadow-lg;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4;
+  }
+  
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  .text-content h1, .text-content h2, .text-content h3 {
+    @apply font-semibold text-gray-900 mb-4;
+  }
+  
+  .text-content h1 {
+    @apply text-3xl;
+  }
+  
+  .text-content h2 {
+    @apply text-2xl;
+  }
+  
+  .text-content h3 {
+    @apply text-xl;
+  }
+  
+  .text-content p {
+    @apply text-gray-600 mb-4 leading-relaxed;
+  }
+  
+  .text-content ul {
+    @apply mb-4;
+  }
+  
+  .text-content li {
+    @apply text-gray-600 mb-2;
+  }
+  
+  .text-content strong {
+    @apply font-semibold text-gray-800;
+  }
+}

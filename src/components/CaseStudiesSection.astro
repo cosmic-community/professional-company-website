@@ -1,0 +1,32 @@
+---
+// src/components/CaseStudiesSection.astro
+import { getCaseStudies } from '../lib/cosmic'
+import CaseStudyCard from './CaseStudyCard.astro'
+
+const caseStudies = await getCaseStudies()
+---
+
+<section id="case-studies" class="section-padding bg-gray-50">
+  <div class="container-max">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Explore how we've helped businesses achieve remarkable results through our strategic solutions
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      {caseStudies.map((caseStudy) => (
+        <CaseStudyCard caseStudy={caseStudy} />
+      ))}
+    </div>
+    
+    {caseStudies.length > 2 && (
+      <div class="text-center mt-12">
+        <a href="/case-studies" class="btn-secondary">
+          View All Case Studies
+        </a>
+      </div>
+    )}
+  </div>
+</section>

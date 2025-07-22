@@ -1,0 +1,24 @@
+---
+// src/components/ServicesSection.astro
+import { getServices } from '../lib/cosmic'
+import ServiceCard from './ServiceCard.astro'
+
+const services = await getServices()
+---
+
+<section id="services" class="section-padding bg-white">
+  <div class="container-max">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        We provide comprehensive solutions to help your business succeed in the digital landscape
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <ServiceCard service={service} />
+      ))}
+    </div>
+  </div>
+</section>

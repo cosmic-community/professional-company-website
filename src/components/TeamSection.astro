@@ -1,0 +1,24 @@
+---
+// src/components/TeamSection.astro
+import { getTeamMembers } from '../lib/cosmic'
+import TeamMemberCard from './TeamMemberCard.astro'
+
+const teamMembers = await getTeamMembers()
+---
+
+<section id="team" class="section-padding bg-gray-50">
+  <div class="container-max">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Our experienced professionals are dedicated to delivering exceptional results for your business
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      {teamMembers.map((member) => (
+        <TeamMemberCard member={member} />
+      ))}
+    </div>
+  </div>
+</section>
